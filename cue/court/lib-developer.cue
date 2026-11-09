@@ -12,7 +12,7 @@ _workerPermissions: list.Concat([
 	(shared.ShellRules & {#frags: [shared.GitRead]}).out,
 ])
 
-Agents: "magister-developer": {
+_courtDeveloper: {
 	_workerPrompt: """
 		You are Court's Developer. Implement one approved task with tests and internal
 		freedom within its feature scope. Do not inherit strict planned-file allowlists.
@@ -59,9 +59,7 @@ Agents: "magister-developer": {
 
 		\(_communication)
 		"""
-	description:   "Implements approved behavior with internal freedom; tests, reports divergences/reasons, escalates observable changes."
 	mode:          "subagent"
-	model:         "\(_modelDefs.midEffort.provider)/\(_modelDefs.midEffort.id)"
 	request: body: temperature: 0.4
 	color:       "#34D399"
 	permissions: _workerPermissions

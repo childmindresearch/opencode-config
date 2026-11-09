@@ -241,12 +241,33 @@ _sharedModels: [
     }
 ]
 
-_sharedApimModels: [{
-        "id": "gpt-5.5",
-        "name": "Azure APIM GPT 5.5",
+_sharedApimModels: [
+    {
+        "id": "gpt-5.1",
+        "name": "Azure APIM gpt-5.1",
         "provider": "azureapim"
-}]
-
+    },
+    {
+        "id": "gpt-5.5",
+        "name": "Azure APIM gpt-5.5",
+        "provider": "azureapim"
+    },
+    {
+        "id": "gpt-5.6-luna",
+        "name": "Azure APIM gpt-5.6-luna",
+        "provider": "azureapim"
+    },
+    {
+        "id": "gpt-6.1-sol",
+        "name": "Azure APIM gpt-6.1-sol",
+        "provider": "azureapim"
+    },
+    {
+        "id": "gpt-6.1-terra",
+        "name": "Azure APIM gpt-6.1-terra",
+        "provider": "azureapim"
+    }
+]
 
 _sharedModelDefs: {
     highEffort: {

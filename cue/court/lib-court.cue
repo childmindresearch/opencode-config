@@ -12,10 +12,8 @@ _reviewerIDs: ["magister-goldfish-review", for lens in _lensOrder {"magister-gol
 // Global denial precedes shell exceptions; a later wildcard would erase them.
 _globalDeny: {action: "*", resource: "*", effect: "deny"}
 _hashRules: [
-	{action: "shell", resource: "sha256sum -- *local/specs/*.md", effect: "allow"},
-	{action: "shell", resource: "sha256sum -- *local/specs/**/*.md", effect: "allow"},
-	{action: "shell", resource: "sha256sum -- '*local/specs/*.md'", effect: "allow"},
-	{action: "shell", resource: "sha256sum -- '*local/specs/**/*.md'", effect: "allow"},
+	{action: "shell", resource: "sha256sum -- *court_*.md", effect: "allow"},
+	{action: "shell", resource: "sha256sum -- '*court_*.md'", effect: "allow"},
 ]
 _compositionGuards: [for pattern in ["*>*", "*<*", "*;*", "*|*", "*&*", "*$*", "*`*", "*\n*"] {
 	action: "shell", resource: pattern, effect: "deny"
@@ -53,8 +51,8 @@ _identity: """
 	Identify the baseline by canonical absolute path, logical revision and
 	PlanDigest: a 64-character lowercase SHA-256 digest of the plan's UTF-8 bytes.
 	Compute it with `sha256sum -- <absolute-plan-path>` using the supplied path,
-	quoted as a single shell argument when needed. Hash only that plan inside
-	repository-root local/specs/, not unrelated files. Never store a digest or
+	quoted as a single shell argument when needed. Hash only the selected court_*.md
+	plan inside the repository, not unrelated files. Never store a digest or
 	approval metadata inside the same file being hashed. Do not invent a digest.
 	A missing input, unavailable hash command or differing bytes is incomplete,
 	not a clean baseline. A revision label alone cannot detect drift.

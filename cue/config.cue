@@ -28,7 +28,7 @@ experimental: {
 
 providers: {
 	litellm: {
-		package: "aisdk:@ai-sdk/openai-compatible"
+		package: "@ai-sdk/openai-compatible"
 		name:    "LiteLLM"
 		settings: {
 			baseURL: "https://litellm-prod-litellm.wonderfulriver-dd795f9a.eastus.azurecontainerapps.io/"
@@ -46,9 +46,16 @@ providers: {
 	}
 	azureapim: {
 		name: "Azure APIM"
-		package: "aisdk:@ai-sdk/openai-compatible"
+		package: "@ai-sdk/openai"
 		settings: {
 			baseURL: "https://cmi-apim-01.azure-api.net/CMI-APIM/openai"
+		}
+		models: {
+			for _, model in _apim_models {
+				(model.id): {
+					name: model.name
+				}
+			}
 		}
 	}
 }

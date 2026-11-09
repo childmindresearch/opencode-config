@@ -48,7 +48,8 @@ _reviewBoundary: """
 
 	## Review Completion
 
-	Require RepositoryRoot, TargetFile (canonical absolute path under its local/specs/),
+	Require RepositoryRoot, TargetFile (canonical absolute path under its repository
+	root whose basename matches court_*.md),
 	Revision, PlanDigest and ContextFiles (explicitly empty allowed). Hash before
 	reading and after inspecting; require both to match expected bytes and revision.
 	Unavailable hashing or drift means INCOMPLETE. Return reviewer ID, revision,

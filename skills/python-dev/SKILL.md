@@ -11,6 +11,13 @@ description: Python development conventions using uv, pytest, ruff, and mypy/ty.
   this avoids implicit dependency synchronization. An environment must exist.
 - `uv sync`, `uv venv`, and `uv add` mutate environment/dependencies. Use only
   with explicit setup/dependency intent; no automatic installs during checks.
+- In the OpenCode container, `UV_PROJECT_ENVIRONMENT=.venv-opencode` separates
+  container dependencies from host `.venv` interpreters and native extensions.
+  If it has not been provisioned, request setup authorization; do not fall back
+  to the host environment. Use a container interpreter and locked dependencies.
+- Private index credentials may be supplied to `uv` through index-specific
+  environment variables. Never print credentials, dump the environment, or
+  include secrets in commands, reports, URLs or source files.
 
 ## Conventions
 

@@ -40,6 +40,10 @@ ENV UV_TOOL_BIN_DIR=/usr/local/bin
 RUN uv tool install --python 3.12 prek \
     && prek --version
 
+# A container-native CLI and encrypted backend shared by all agents.
+RUN uv tool install --python 3.12 keyring==25.7.0 --with keyrings.cryptfile==1.3.9 \
+    && keyring --help
+
 # Azure CLI is not packaged in the base image's Alpine repositories.
 RUN uv venv --python /usr/bin/python3 /opt/azure-cli \
     && uv pip install --no-cache --prerelease allow --python /opt/azure-cli/bin/python azure-cli==2.91.0 pip \

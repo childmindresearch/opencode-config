@@ -33,3 +33,7 @@ services:
       AZURE_DEVOPS_CACHE_DIR: ${HOME}/.cache/opencode/azure-devops
       TEXTUAL_THEME: dark
       OPENSPEC_TELEMETRY: "0"
+      UV_PROJECT_ENVIRONMENT: .venv-opencode
+      UV_INDEX_AZURE_FEED_USERNAME: VssSessionToken
+      PYTHON_KEYRING_BACKEND: keyrings.cryptfile.cryptfile.CryptFileKeyring
+      KEYRING_CRYPTFILE_PATH: ${HOME}/.local/share/opencode/keyring/cryptfile_pass.cfg
