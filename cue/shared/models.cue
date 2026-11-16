@@ -271,8 +271,8 @@ _sharedApimModels: [
 
 _sharedModelDefs: {
     highEffort: {
-        id:   "bedrock/global.openai.gpt-6.1-sol"
-        provider: "litellm"
+        id:   "gpt-6.1-sol"
+        provider: "azureapim"
     }
     midEffort: {
         id:   "bedrock/global.openai.gpt-6.1-terra"

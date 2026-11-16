@@ -2,7 +2,6 @@ package opencode
 
 import (
 	interactive "opencode.local/config/cue/interactive@v0"
-	egm "opencode.local/config/cue/egm@v0"
 	scout "opencode.local/config/cue/scout@v0"
 	review "opencode.local/config/cue/review@v0"
 	court "opencode.local/config/cue/court@v0"
@@ -10,7 +9,7 @@ import (
 
 "$schema": "https://opencode.ai/config.json"
 
-agents: interactive.Agents & egm.Agents & scout.Agents & review.Agents & court.Agents
+agents: interactive.Agents & scout.Agents & review.Agents & court.Agents
 
 share: "disabled"
 
