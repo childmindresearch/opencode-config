@@ -213,7 +213,7 @@
         "architect": {
             "description": "Assesses requests and creates implementation plans",
             "mode": "primary",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -2814,7 +2814,7 @@
         "magister": {
             "description": "Persistent Court planner: proportionate plans, independent Goldfish review, Git strategy and approved Seneschal handoff.",
             "mode": "primary",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -3263,7 +3263,7 @@
         "magister-developer-high": {
             "description": "High-effort Court developer; default for ordinary tasks, complex work or uncertain implementation.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.4
@@ -4385,7 +4385,7 @@
         "magister-goldfish-codebase-details-review": {
             "description": "Independent Court codebase audit: existing contracts, omitted behavior, edge cases, drift and reuse evidence.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -4633,7 +4633,7 @@
         "magister-goldfish-design-review": {
             "description": "Independent Court design review: architecture, alternatives, constraints, economics and material risks.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -4757,7 +4757,7 @@
         "magister-goldfish-implementation-readiness-review": {
             "description": "Independent Court readiness review: resolved observable contracts, acceptance, tests and safe phases; internal choices remain open.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -4881,7 +4881,7 @@
         "magister-goldfish-review": {
             "description": "One fresh independent reviewer applying all seven Goldfish lenses to nontrivial existing-feature plans.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -5253,7 +5253,7 @@
         "magister-goldfish-zoom-out-review": {
             "description": "Independent Court zoom-out review: root problem, simplicity, YAGNI, architectural placement and evidence-backed reuse.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -5541,7 +5541,7 @@
         "review-bugs": {
             "description": "Finds certain significant diff-only/introduced-code defects. Read-only; no builds, tests, forge access, dispatch.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -5920,7 +5920,7 @@
         "review-orchestrator": {
             "description": "Terminal-only, local-first review: independent rule/bug scans, per-finding validation, evidence-backed DoD checks. No source edits or publishing.",
             "mode": "all",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -7488,7 +7488,7 @@
         "review-test-sufficiency": {
             "description": "Assesses relevant test coverage and proven redundancy for changed behavior. Read-only; no test runs, scripts, or edits.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -7867,7 +7867,7 @@
         "review-validator": {
             "description": "Independently tries to disprove one candidate. Read-only; scoped PR reads only in PR mode; no dispatch/writes.",
             "mode": "subagent",
-            "model": "azureapim/gpt-6.1-sol",
+            "model": "litellm/bedrock/global.openai.gpt-6.2-sol",
             "request": {
                 "body": {
                     "temperature": 0.1
@@ -11325,20 +11325,6 @@
                         "output": 65535
                     }
                 },
-                "bedrock/global.anthropic.claude-sonnet-4-5-20250929-v1:0": {
-                    "name": "Global Claude Sonnet 4.5",
-                    "limit": {
-                        "context": 200000,
-                        "output": 64000
-                    }
-                },
-                "bedrock/global.anthropic.claude-opus-4-5-20251101-v1:0": {
-                    "name": "GLOBAL Anthropic Claude Opus 4.5",
-                    "limit": {
-                        "context": 200000,
-                        "output": 64000
-                    }
-                },
                 "bedrock/global.openai.gpt-5.6-sol": {
                     "name": "Global OpenAI GPT-5.6 Sol",
                     "limit": {
@@ -11440,13 +11426,6 @@
                         "output": 128000
                     }
                 },
-                "bedrock/global.anthropic.claude-haiku-5-5": {
-                    "name": "Global Anthropic Claude Haiku 5.5",
-                    "limit": {
-                        "context": 1000000,
-                        "output": 128000
-                    }
-                },
                 "bedrock/global.anthropic.claude-sonnet-5-5": {
                     "name": "Global Anthropic Claude Sonnet 5.5",
                     "limit": {
@@ -11461,10 +11440,26 @@
                         "output": 128000
                     }
                 },
-                "bedrock/global.anthropic.claude-opus-4-6-v1": {
-                    "name": "Global Anthropic Claude Opus 4.6",
+                "bedrock/global.openai.gpt-6.1-terra": {
+                    "name": "Global OpenAI GPT-6.1 Terra",
+                    "limit": {
+                        "context": 1050000,
+                        "input": 922000,
+                        "output": 128000
+                    }
+                },
+                "bedrock/global.anthropic.claude-opus-5-5": {
+                    "name": "Global Anthropic Claude Opus 5.5",
                     "limit": {
                         "context": 1000000,
+                        "output": 128000
+                    }
+                },
+                "bedrock/global.openai.gpt-5.6-terra": {
+                    "name": "Global OpenAI GPT-5.6 Terra",
+                    "limit": {
+                        "context": 1050000,
+                        "input": 922000,
                         "output": 128000
                     }
                 },
@@ -11484,22 +11479,45 @@
                         "output": 128000
                     }
                 },
-                "bedrock/global.openai.gpt-6.1-terra": {
-                    "name": "Global OpenAI GPT-6.1 Terra"
+                "bedrock/global.moonshotai.kimi-k3.1": {
+                    "name": "Global Moonshot AI Kimi K3.1",
+                    "limit": {
+                        "context": 1048576,
+                        "output": 1048576
+                    }
                 },
-                "bedrock/global.anthropic.claude-opus-5-5": {
-                    "name": "Global Anthropic Claude Opus 5.5",
+                "bedrock/global.anthropic.claude-opus-4-6-v1": {
+                    "name": "Global Anthropic Claude Opus 4.6",
                     "limit": {
                         "context": 1000000,
                         "output": 128000
                     }
                 },
-                "bedrock/global.openai.gpt-5.6-terra": {
-                    "name": "Global OpenAI GPT-5.6 Terra",
+                "bedrock/global.anthropic.claude-sonnet-4-5-20250929-v1:0": {
+                    "name": "Global Claude Sonnet 4.5",
                     "limit": {
-                        "context": 1050000,
-                        "input": 922000,
+                        "context": 200000,
+                        "output": 64000
+                    }
+                },
+                "bedrock/global.anthropic.claude-haiku-5-5": {
+                    "name": "Global Anthropic Claude Haiku 5.5",
+                    "limit": {
+                        "context": 1000000,
                         "output": 128000
+                    }
+                },
+                "bedrock/global.openai.gpt-6.2-astra": {
+                    "name": "Global OpenAI GPT-6.2 Astra"
+                },
+                "bedrock/global.openai.gpt-6.2-sol": {
+                    "name": "Global OpenAI GPT-6.2 Sol"
+                },
+                "bedrock/global.anthropic.claude-opus-4-5-20251101-v1:0": {
+                    "name": "GLOBAL Anthropic Claude Opus 4.5",
+                    "limit": {
+                        "context": 200000,
+                        "output": 64000
                     }
                 }
             }

@@ -11,24 +11,6 @@ _sharedModels: [
         "provider": "litellm"
     },
     {
-        "id": "bedrock/global.anthropic.claude-sonnet-4-5-20250929-v1:0",
-        "limit": {
-            "context": 200000,
-            "output": 64000
-        },
-        "name": "Global Claude Sonnet 4.5",
-        "provider": "litellm"
-    },
-    {
-        "id": "bedrock/global.anthropic.claude-opus-4-5-20251101-v1:0",
-        "limit": {
-            "context": 200000,
-            "output": 64000
-        },
-        "name": "GLOBAL Anthropic Claude Opus 4.5",
-        "provider": "litellm"
-    },
-    {
         "id": "bedrock/global.openai.gpt-5.6-sol",
         "limit": {
             "context": 1050000,
@@ -160,15 +142,6 @@ _sharedModels: [
         "provider": "litellm"
     },
     {
-        "id": "bedrock/global.anthropic.claude-haiku-5-5",
-        "limit": {
-            "context": 1000000,
-            "output": 128000
-        },
-        "name": "Global Anthropic Claude Haiku 5.5",
-        "provider": "litellm"
-    },
-    {
         "id": "bedrock/global.anthropic.claude-sonnet-5-5",
         "limit": {
             "context": 1000000,
@@ -187,12 +160,32 @@ _sharedModels: [
         "provider": "litellm"
     },
     {
-        "id": "bedrock/global.anthropic.claude-opus-4-6-v1",
+        "id": "bedrock/global.openai.gpt-6.1-terra",
+        "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+        },
+        "name": "Global OpenAI GPT-6.1 Terra",
+        "provider": "litellm"
+    },
+    {
+        "id": "bedrock/global.anthropic.claude-opus-5-5",
         "limit": {
             "context": 1000000,
             "output": 128000
         },
-        "name": "Global Anthropic Claude Opus 4.6",
+        "name": "Global Anthropic Claude Opus 5.5",
+        "provider": "litellm"
+    },
+    {
+        "id": "bedrock/global.openai.gpt-5.6-terra",
+        "limit": {
+            "context": 1050000,
+            "input": 922000,
+            "output": 128000
+        },
+        "name": "Global OpenAI GPT-5.6 Terra",
         "provider": "litellm"
     },
     {
@@ -216,27 +209,58 @@ _sharedModels: [
         "provider": "litellm"
     },
     {
-        "id": "bedrock/global.openai.gpt-6.1-terra",
-        "name": "Global OpenAI GPT-6.1 Terra",
+        "id": "bedrock/global.moonshotai.kimi-k3.1",
+        "limit": {
+            "context": 1048576,
+            "output": 1048576
+        },
+        "name": "Global Moonshot AI Kimi K3.1",
         "provider": "litellm"
     },
     {
-        "id": "bedrock/global.anthropic.claude-opus-5-5",
+        "id": "bedrock/global.anthropic.claude-opus-4-6-v1",
         "limit": {
             "context": 1000000,
             "output": 128000
         },
-        "name": "Global Anthropic Claude Opus 5.5",
+        "name": "Global Anthropic Claude Opus 4.6",
         "provider": "litellm"
     },
     {
-        "id": "bedrock/global.openai.gpt-5.6-terra",
+        "id": "bedrock/global.anthropic.claude-sonnet-4-5-20250929-v1:0",
         "limit": {
-            "context": 1050000,
-            "input": 922000,
+            "context": 200000,
+            "output": 64000
+        },
+        "name": "Global Claude Sonnet 4.5",
+        "provider": "litellm"
+    },
+    {
+        "id": "bedrock/global.anthropic.claude-haiku-5-5",
+        "limit": {
+            "context": 1000000,
             "output": 128000
         },
-        "name": "Global OpenAI GPT-5.6 Terra",
+        "name": "Global Anthropic Claude Haiku 5.5",
+        "provider": "litellm"
+    },
+    {
+        "id": "bedrock/global.openai.gpt-6.2-astra",
+        "name": "Global OpenAI GPT-6.2 Astra",
+        "provider": "litellm"
+    },
+    {
+        "id": "bedrock/global.openai.gpt-6.2-sol",
+        "name": "Global OpenAI GPT-6.2 Sol",
+        "provider": "litellm"
+    },
+    {
+        "id": "bedrock/global.anthropic.claude-opus-4-5-20251101-v1:0",
+        "limit": {
+            "context": 200000,
+            "output": 64000
+        },
+        "name": "GLOBAL Anthropic Claude Opus 4.5",
         "provider": "litellm"
     }
 ]
@@ -271,8 +295,8 @@ _sharedApimModels: [
 
 _sharedModelDefs: {
     highEffort: {
-        id:   "gpt-6.1-sol"
-        provider: "azureapim"
+        id:   "bedrock/global.openai.gpt-6.2-sol"
+        provider: "litellm"
     }
     midEffort: {
         id:   "bedrock/global.openai.gpt-6.1-terra"
