@@ -1,29 +1,30 @@
-export CUE := env_var_or_default("CUE", "cue")
+cue_image := "cuelang/cue:0.17.1"
+cue := 'docker run --rm --user "$(id -u):$(id -g)" --mount "type=bind,source=$PWD,target=/workspace" --workdir /workspace ' + cue_image
 
 # Show available commands.
 help:
     @just --list
 
 # Generate opencode.json from the CUE source.
-build: _check-cue
-    "$CUE" export ./cue --out json -o opencode.json --force
+build: _check-docker
+    {{cue}} export ./cue --out json -o opencode.json --force
 
 # Validate the CUE source.
-validate: _check-cue
-    "$CUE" vet ./cue
+validate: _check-docker
+    {{cue}} vet ./cue
 
 # Generate the agent workflow SVG using TALA.
 diagram:
     d2 --layout=tala agents.d2 agents.svg
 
 # Checks the existing artifact; intentionally does not rebuild it.
-test: _check-cue
+test:
     node --test scripts/test-config.mjs
 
 # Remove the generated opencode.json.
 clean:
     rm -f opencode.json
 
-# Check that the configured CUE executable is available.
-_check-cue:
-    @command -v "$CUE" >/dev/null 2>&1 || { printf '%s\n' "CUE executable '$CUE' not found. Install approved CUE v0.14.2 on PATH or set CUE=/absolute/path/to/cue, then rerun just." >&2; exit 1; }
+# Check that Docker is available.
+_check-docker:
+    @command -v docker >/dev/null 2>&1 || { printf '%s\n' "Docker is required to run CUE. Install Docker and rerun just." >&2; exit 1; }
